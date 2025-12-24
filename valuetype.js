@@ -35,3 +35,10 @@ let obj2 = obj1;
 obj1.value = 20;
 console.log(obj1.value); // 20
 console.log(obj2.value); // 20
+
+let lerning = ["JavaScript", "Python", "Java", "C++",true,null,6.5];
+console.log(lerning[2]); // "Java"
+lerning[3] = "C#";
+console.log(lerning); // ["JavaScript", "Python", "Java", "C#", true, null, 6.5]   
+// Checking the type of the array and arrays are objects in JavaScript 
+console.log(typeof lerning); // "object"
