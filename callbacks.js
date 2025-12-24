@@ -50,3 +50,46 @@ console.log("End");
 // });
 
 // In the above examples, callback functions are used to handle asynchronous operations, process data, and respond to events in JavaScript.
+// Event queue and loop example
+console.log("Script start");
+// Simulating asynchronous operations with setTimeout and Promises
+setTimeout(() => {
+    console.log("Timeout callback");
+}, 0);
+// Using Promise to demonstrate microtask queue
+Promise.resolve().then(() => {
+    console.log("Promise callback");
+});
+// Synchronous log
+console.log("Script end");
+
+// Expected output order:
+// Script start
+// Script end
+// Promise callback
+// Timeout callback
+
+// This demonstrates how the event loop processes the call stack, microtask queue (Promises), and macrotask queue (setTimeout) in JavaScript.
+
+// Demonstrating callback with array methods
+const fruits = ["apple", "banana", "cherry", "date"];
+// Using map, filter, and reduce with callback functions
+const uppercasedFruits = fruits.map(function(fruit) {
+    return fruit.toUpperCase();
+});
+
+console.log("Uppercased Fruits:", uppercasedFruits);
+// Filtering fruits that start with 'b'
+const filteredFruits = fruits.filter(function(fruit) {
+    return fruit.startsWith("b");
+});
+
+console.log("Filtered Fruits (start with 'b'):", filteredFruits);
+// Reducing to get the total length of all fruit names
+const totalLength = fruits.reduce(function(accumulator, fruit) {
+    return accumulator + fruit.length;
+}, 0);
+
+console.log("Total Length of Fruit Names:", totalLength);
+
+// In the above examples, callback functions are used with array methods like map, filter, and reduce to process and transform data in JavaScript.   
